@@ -1,0 +1,25 @@
+.form {
+    position: relative;
+}
+.input {
+    border: 1px solid var(--gris3);
+    padding: 1rem;
+    min-width: 300px;
+}
+.inputsubmit {
+    height: 3rem;
+    width: 3rem;
+    display: block;
+    background-size: 4rem;
+    background-image: url('/img/buscar.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 1rem;
+    top: 1px;
+    background-color: white;
+    border: none;
+    text-indent: -9999px;
+}
+.inputsubmit:hover{
+    cursor: pointer;
+}

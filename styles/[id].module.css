@@ -1,0 +1,107 @@
+.contenedor {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor_producto{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+}
+
+.texto {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.tituloh2 {
+    margin: 2rem 0;
+}
+.form {
+    max-width: 600px;
+    width: 95%;
+    margin: 5rem auto 0 auto;
+}
+.form fieldset {
+    margin: 2rem 0;
+    border: 1px solid #e1e1e1;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.campo {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+.campo label {
+    flex: 0 0 150px;
+    font-size: 1.8rem;
+}
+.campo input {
+    flex: 1;
+    padding: 1rem;
+}
+.campo textarea {
+    flex: 1;
+    padding: 1rem;
+    height: 300px;
+}
+.submit {
+    background-color: var(--naranja);
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    color:#FFF;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+}
+.submit:hover{
+    cursor: pointer;
+}
+
+.boton{
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid #d1d1d1;
+    padding: .8rem 2rem;
+    margin: 2rem 20rem;
+    background-color:#DA552F;
+    color: white;
+}
+.boton2{
+    background-color: white;
+    color: #000;
+}
+.boton3:hover {
+    cursor: pointer;
+}
+
+.votos {
+    margin-top: 5rem;
+}
+.comentario{
+    text-align: left;
+    margin-left: 3rem;
+    border: 1px solid #e1e1e1;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+.comentario span {
+    font-weight: bold;
+}
+.creador {
+    padding: .5rem 2rem;
+    background-color: #DA552F;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+}

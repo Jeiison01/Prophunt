@@ -11,6 +11,8 @@ import {ref, getDownloadURL, uploadBytesResumable} from '@firebase/storage'
 import useValidacion from "../hooks/useValidacion";
 import validarCrearProducto from "../validacion/validarCrearProducto";
 
+import Error404 from "../components/404";
+
 const STATE_INICIAL = {
   nombre:'',
   empresa:'',
@@ -53,7 +55,12 @@ export default function NuevoProducto() {
       descripcion,
       votos: 0,
       comentarios: [],
-      creado: Date.now()
+      creado: Date.now(),
+      creador:{
+        id: usuario.uid,
+        nombre: usuario.displayName
+      },
+      haVotado:[]
     }
     //Insertarlo en la base de datos
     await addDoc(collection(db, "productos"), (producto))
@@ -96,6 +103,7 @@ export default function NuevoProducto() {
   return (
     <div>
       <Layout>
+        {!usuario ? <Error404/> :(
       <div >
         <h1 className={styles.titulo}>Nuevo Producto</h1>
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
@@ -106,7 +114,7 @@ export default function NuevoProducto() {
             <input
             type="text"
             id="nombre"
-            placeholder="Tu Nombre"
+            placeholder="Nombre del Producto"
             name="nombre"
             value={nombre}
             onChange={handleChange}
@@ -179,6 +187,7 @@ export default function NuevoProducto() {
           />
         </form>
       </div>
+      )}
       </Layout>
     </div>
   )

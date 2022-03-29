@@ -1,6 +1,7 @@
 import styles from '../styles/DetallesProducto.module.css'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { es } from 'date-fns/locale';
+import Link from 'next/link';
 
 const DetallesProducto = ({producto}) => {
     const {id, comentarios, creado, descripcion, empresa, nombre, url, URLImage, votos} = producto;
@@ -12,8 +13,9 @@ const DetallesProducto = ({producto}) => {
                 <img className={styles.imagen} src={URLImage}/>
             </div>
             <div>
-                <a className={styles.titulo}>{nombre}</a>
-
+                <Link href="/productos/[id]" as={`productos/${id}`}>
+                    <a className={styles.titulo}>{nombre}</a>
+                </Link>
                 <p className={styles.texto_descripcion}>{descripcion}</p>
                 <div className={styles.comentarios}>
                     <div>
